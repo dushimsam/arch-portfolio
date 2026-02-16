@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Rutikanga Shema | Architecture Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Cinzel', serif; }
+        
+        /* Architectural Grid Pattern */
+        .architectural-grid {
+            background-image: linear-gradient(#e5e7eb 1px, transparent 1px),
+            linear-gradient(90deg, #e5e7eb 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-stone-900 antialiased selection:bg-stone-900 selection:text-white">
+
+    <nav class="fixed w-full z-50 bg-stone-50/95 backdrop-blur-md border-b border-stone-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-lg md:text-xl font-bold tracking-widest uppercase z-50 relative">B.R. Shema</a>
+            
+            <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wide">
+                <a href="#work" class="hover:text-stone-500 transition">Projects</a>
+                <a href="#philosophy" class="hover:text-stone-500 transition">Philosophy</a>
+                <a href="#about" class="hover:text-stone-500 transition">About</a>
+                <a href="#contact" class="hover:text-stone-500 transition">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden z-50 p-2 focus:outline-none" aria-label="Toggle Menu">
+                <div class="w-6 h-0.5 bg-stone-900 mb-1 transition-all" id="bar1"></div>
+                <div class="w-6 h-0.5 bg-stone-900 mb-1 transition-all" id="bar2"></div>
+                <div class="w-6 h-0.5 bg-stone-900 transition-all" id="bar3"></div>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-stone-50 z-40 flex flex-col items-center justify-center space-y-8 text-2xl uppercase tracking-widest opacity-0 pointer-events-none transition-opacity duration-300">
+            <a href="#work" class="hover:text-stone-500 transition" onclick="toggleMenu()">Projects</a>
+            <a href="#philosophy" class="hover:text-stone-500 transition" onclick="toggleMenu()">Philosophy</a>
+            <a href="#about" class="hover:text-stone-500 transition" onclick="toggleMenu()">About</a>
+            <a href="#contact" class="hover:text-stone-500 transition" onclick="toggleMenu()">Contact</a>
+        </div>
+    </nav>
+
+    <header class="relative pt-32 pb-12 px-6 md:pt-48 md:pb-24 architectural-grid border-b border-stone-200">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            
+            <div class="space-y-6 order-2 md:order-1">
+                <p class="text-stone-500 uppercase tracking-[0.2em] text-xs md:text-sm">Architecture Student • Morocco</p>
+                <h1 class="text-5xl md:text-7xl leading-tight">
+                    Brian Rutikanga <br>
+                    <span class="italic text-stone-400">Shema</span>
+                </h1>
+                <p class="text-base md:text-lg text-stone-600 max-w-md leading-relaxed border-l-2 border-stone-300 pl-6">
+                    "Architecture is not just about shelter, but about shaping the way we live and interact with our environment."
+                </p>
+                <div class="pt-8">
+                    <a href="#work" class="inline-block bg-stone-900 text-white px-8 py-3 text-sm uppercase tracking-wider hover:bg-stone-700 transition duration-300 shadow-lg">
+                        View My Work
+                    </a>
+                </div>
+            </div>
+
+            <div class="relative order-1 md:order-2 h-[400px] md:h-[650px]">
+                <div class="absolute -inset-4 border-2 border-stone-200 translate-x-4 translate-y-4 z-0 hidden md:block"></div>
+                <img src="./images/hero-portrait.jpg" 
+                     alt="Brian Shema with Model" 
+                     class="relative z-10 w-full h-full object-cover object-top shadow-2xl rounded-sm grayscale hover:grayscale-0 transition duration-700 ease-in-out">
+            </div>
+        </div>
+    </header>
+
+    <section id="work" class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-start md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h2 class="text-3xl md:text-4xl">Selected Work</h2>
+                    <p class="text-stone-500 mt-2 text-sm md:text-base">Academic & Professional Highlights</p>
+                </div>
+                
+                <div class="flex gap-4 self-end md:self-auto">
+                    <button onclick="moveSlide(-1)" class="p-3 md:p-4 border border-stone-300 hover:bg-stone-900 hover:text-white transition rounded-full active:bg-stone-800" aria-label="Previous Slide">
+                        ←
+                    </button>
+                    <button onclick="moveSlide(1)" class="p-3 md:p-4 border border-stone-300 hover:bg-stone-900 hover:text-white transition rounded-full active:bg-stone-800" aria-label="Next Slide">
+                        →
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative w-full overflow-hidden">
+                <div id="slider" class="flex transition-transform duration-700 ease-in-out w-full">
+                    
+                    <div class="min-w-full md:grid md:grid-cols-12 gap-8 items-center flex flex-col">
+                        <div class="w-full md:col-span-8 h-[300px] md:h-[500px] bg-stone-100 relative">
+                            <img src="./images/project-main.jpg" alt="House of Penumbra" class="w-full h-full object-cover">
+                        </div>
+                        <div class="w-full md:col-span-4 mt-6 md:mt-0 space-y-4 px-2">
+                            <h3 class="text-2xl md:text-3xl">The House of Penumbra</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                A residential concept focusing on light manipulation and thermal comfort in arid climates. The design utilizes local timber and concrete to create a sustainable ecosystem.
+                            </p>
+                            <ul class="text-xs font-bold uppercase tracking-widest text-stone-400 space-y-1">
+                                <li>• Concept Design</li>
+                                <li>• Physical Modeling</li>
+                                <li>• Technical Drawing</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="min-w-full md:grid md:grid-cols-12 gap-8 items-center flex flex-col">
+                        <div class="w-full md:col-span-8 h-[300px] md:h-[500px] bg-stone-100 relative">
+                            <img src="./images/hero-portrait.jpg" alt="Physical Model Detail" class="w-full h-full object-cover object-top">
+                        </div>
+                        <div class="w-full md:col-span-4 mt-6 md:mt-0 space-y-4 px-2">
+                            <h3 class="text-2xl md:text-3xl">Physical Modeling</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                Translating 2D concepts into 3D reality. This white card model explores spatial relationships and shadow play, critical for understanding the building's volume.
+                            </p>
+                            <ul class="text-xs font-bold uppercase tracking-widest text-stone-400 space-y-1">
+                                <li>• Scale 1:50</li>
+                                <li>• Materiality Study</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <div class="min-w-full md:grid md:grid-cols-12 gap-8 items-center flex flex-col">
+                        <div class="w-full md:col-span-8 h-[300px] md:h-[500px] bg-stone-100 relative">
+                            <img src="./images/site-work.jpg" alt="Site Work" class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="w-full md:col-span-4 mt-6 md:mt-0 space-y-4 px-2">
+                            <h3 class="text-2xl md:text-3xl">On-Site Execution</h3>
+                            <p class="text-stone-600 text-sm leading-relaxed">
+                                Experience in construction management and site safety. Understanding the logistics of how a design is actually assembled is crucial to my architectural philosophy.
+                            </p>
+                            <ul class="text-xs font-bold uppercase tracking-widest text-stone-400 space-y-1">
+                                <li>• Site Supervision</li>
+                                <li>• Safety Protocols</li>
+                                <li>• Logistics</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="py-16 md:py-24 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <img src="./images/site-work.jpg" alt="Site Visit Construction" class="w-full h-[500px] object-cover shadow-2xl rounded-sm filter grayscale hover:grayscale-0 transition duration-700">
+            </div>
+            
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl md:text-4xl mb-6">From Concept to Concrete</h2>
+                <p class="text-stone-600 leading-relaxed mb-6">
+                    I believe that great architecture isn't just drawn—it's built. Based in Morocco, my studies bridge the gap between theoretical design and the practical realities of the construction site.
+                </p>
+                <p class="text-stone-600 leading-relaxed mb-8">
+                    Whether it's managing site logistics or crafting detailed physical models, I bring a hands-on approach to every project. My goal is to design spaces that are not only visually striking but structurally sound and buildable.
+                </p>
+                <div class="grid grid-cols-2 gap-8 border-t border-stone-200 pt-8">
+                    <div>
+                        <span class="block text-3xl font-serif font-bold text-stone-900">4+</span>
+                        <span class="text-xs uppercase tracking-wider text-stone-500">Years Studying</span>
+                    </div>
+                    <div>
+                        <span class="block text-3xl font-serif font-bold text-stone-900">100%</span>
+                        <span class="text-xs uppercase tracking-wider text-stone-500">Commitment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-stone-900 text-stone-300">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl text-white mb-8">Technical Proficiency</h2>
+            <p class="text-base md:text-lg leading-relaxed mb-12 text-stone-400">
+                My work is driven by a curiosity for materials and a rigorous attention to detail, from the first sketch to the final brick.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center border-t border-stone-800 pt-12">
+                <div class="p-4 bg-stone-800/50 md:bg-transparent rounded">
+                    <h4 class="text-white font-bold uppercase mb-2">Education</h4>
+                    <p class="text-sm">Architecture & Urbanism<br>Morocco</p>
+                </div>
+                <div class="p-4 bg-stone-800/50 md:bg-transparent rounded">
+                    <h4 class="text-white font-bold uppercase mb-2">Software</h4>
+                    <p class="text-sm">AutoCAD • Revit • SketchUp<br>Photoshop • Lumion</p>
+                </div>
+                <div class="p-4 bg-stone-800/50 md:bg-transparent rounded">
+                    <h4 class="text-white font-bold uppercase mb-2">Focus</h4>
+                    <p class="text-sm">Sustainable Design<br>Residential Planning</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-stone-950 text-stone-500 py-12 text-center border-t border-stone-900 px-6">
+        <p class="mb-4 text-white">Get in touch for collaborations.</p>
+        <a href="mailto:brian.shema@email.com" class="text-xl md:text-2xl font-serif text-white hover:text-stone-300 transition break-all">brian.shema@email.com</a>
+        <p class="mt-12 text-xs uppercase tracking-widest opacity-30">&copy; 2026 Brian Rutikanga Shema</p>
+    </footer>
+
+    <script>
+        // Slideshow Logic
+        let currentSlide = 0;
+        function moveSlide(direction) {
+            const slider = document.getElementById('slider');
+            const totalSlides = slider.children.length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bars = [document.getElementById('bar1'), document.getElementById('bar2'), document.getElementById('bar3')];
+
+        function toggleMenu() {
+            const isOpen = !mobileMenu.classList.contains('pointer-events-none');
+            
+            if (isOpen) {
+                // Close Menu
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                bars[0].classList.remove('rotate-45', 'translate-y-2.5');
+                bars[1].classList.remove('opacity-0');
+                bars[2].classList.remove('-rotate-45', '-translate-y-2.5');
+            } else {
+                // Open Menu
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                bars[0].classList.add('rotate-45', 'translate-y-2.5');
+                bars[1].classList.add('opacity-0');
+                bars[2].classList.add('-rotate-45', '-translate-y-2.5');
+            }
+        }
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('pointer-events-none')) {
+                    toggleMenu();
+                }
+            });
+        });
+        
+        menuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
