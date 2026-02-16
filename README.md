@@ -13,8 +13,3 @@ A minimalist portfolio website designed to showcase architectural projects, phys
 - **Styling:** Tailwind CSS (CDN)
 - **Interactivity:** Vanilla JavaScript
 - **Fonts:** Cinzel (Headings) & Inter (Body)
-
-## 📦 How to Run
-1. Clone the repo:
-   ```bash
-   git clone [https://github.com/yourusername/arch-portfolio.git](https://github.com/yourusername/arch-portfolio.git)
